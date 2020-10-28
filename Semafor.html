@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Semafor</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="centerInverse">
+        <div class="partInverse">
+            <p class="team" id="firstTeamName"></p>
+            <p class="result" id="firstTeamResult"></p>
+        </div>
+        <div class="partInverse">
+            <div class="timer">
+                <div class="divInline" id="minutes"></div>
+                <div class="divInline">:</div>
+                <div class="divInline" id="seconds"></div>
+            </div>
+
+            <div class="halftime">
+                <p>POLUVRIJEME</p>
+                <p id="halftimeValue">1</p>
+            </div>
+
+            <div class="marginForFaul">
+                <p class="inlineParagraf" id="firstTeamFaul"></p>
+                <p class="inlineParagraf leftAndRightMargin">FAUL</p>
+                <p class="inlineParagraf" id="secondTeamFaul"></p>
+            </div>
+        </div>
+
+        <div class="partInverse">
+            <p class="team" id="secondTeamName"></p>
+            <p class="result" id="secondTeamResult"></p>
+        </div>
+    </div>
+
+    <audio id="horn">
+        <source src="horn.mp3" type="audio/mpeg">
+    </audio>
+
+    <script type="text/javascript" src="database.js"></script>
+    <script src="controller.js" type="text/javascript"></script>
+    <script src="countdown.js" type="text/javascript"></script>
+</body>
+</html>

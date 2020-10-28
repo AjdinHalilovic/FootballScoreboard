@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Kontrolna ploca</title>
+</head>
+<body>
+    <div class="center">
+        <div class="part">
+            <fieldset>
+                <legend>TIM 1</legend>
+                <label for="nameFirstTeam">Naziv tima</label>
+                <input type="text" onblur="setNameFirstTeam(this.value)" />
+                <br />
+
+                <p>Golovi</p>
+                <button class="controlButton" onclick="changeScoreFirstTeam(false);"><i class="fa fa-minus"></i></button>
+                <button class="controlButton" onclick="changeScoreFirstTeam(true);"><i class="fa fa-plus"></i></button>
+                <br />
+
+                <p>Prekršaji</p>
+                <button class="controlButton" onclick="changeFaulFirstTeam(false);"><i class="fa fa-minus"></i></button>
+                <button class="controlButton" onclick="changeFaulFirstTeam(true);"><i class="fa fa-plus"></i></button>
+            </fieldset>
+        </div>
+
+        <div class="part">
+            <fieldset>
+                <legend>VRIJEME</legend>
+                <div>
+                    <div class="divInline">
+                        <label for="nameSecondTeam">MIINUTE</label>
+                        <br />
+                        <input type="text" id="min" style="width:70px" onblur="setMinutes(this.value)" />
+                    </div>
+                    <div class="divInline input">:</div>
+                    <div class="divInline">
+                        <label for="nameSecondTeam">SEKUNDE</label>
+                        <br />
+                        <input type="text" id="sec" style="width:70px" onblur="setSeconds(this.value)"/>
+                    </div>
+                </div>
+                <div>
+                    <br />
+                    <button class="controlButtonHalfTime" onclick="startTime();"    id="startButton">START</button>
+                    <button class="controlButtonHalfTime" onclick="pauseTime();"    id="pauseButton">PAUSE</button>
+                    <button class="controlButtonHalfTime" onclick="resumeTime();"   id="resumeButton">RESUME</button>
+                    <button class="controlButtonHalfTime" onclick="resetTime();">RESET</button>
+                </div>
+                <hr />
+                <div>
+                    <button class="controlButtonHalfTime" onclick="changeHalfTimeTeam();">PROMIJENI POLUVRIJEME</button>
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="part">
+            <fieldset>
+                <legend>TIM 2</legend>
+
+                <label for="nameSecondTeam">Naziv tima</label>
+                <input type="text" onblur="setNameSecondTeam(this.value)" />
+                <br />
+
+                <p>Golovi</p>
+                <button class="controlButton" onclick="changeScoreSecondTeam(false);"><i class="fa fa-minus"></i></button>
+                <button class="controlButton" onclick="changeScoreSecondTeam(true);"><i class="fa fa-plus"></i></button>
+                <br />
+
+                <p>Prekršaji</p>
+                <button class="controlButton" onclick="changeFaulSecondTeam(false);"><i class="fa fa-minus"></i></button>
+                <button class="controlButton" onclick="changeFaulSecondTeam(true);"><i class="fa fa-plus"></i></button>
+            </fieldset>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="database.js"></script>
+    <script type="text/javascript" src="boardController.js"></script>
+</body>
+</html>
